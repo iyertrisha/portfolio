@@ -28,7 +28,7 @@ export default function Document() {
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="Praneel Sindhole - Blog"
+          title="Trisha N Iyer - Blog"
           href="/rss.xml"
         />
         {umamiWebsiteId && umamiScriptUrl && (

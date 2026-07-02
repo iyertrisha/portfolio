@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import Date from '../../../components/date';
 import Layout from '../../../components/layout';
@@ -25,12 +24,12 @@ export default function Post({ postData, relatedPosts = [], seriesNav = null }) 
     dateModified: postData.updated || postData.date,
     author: {
       '@type': 'Person',
-      name: 'Praneel Sindhole',
+      name: 'Trisha N Iyer',
       url: SITE_URL,
     },
     publisher: {
       '@type': 'Person',
-      name: 'Praneel Sindhole',
+      name: 'Trisha N Iyer',
       url: SITE_URL,
     },
     wordCount: postData.wordCount,
@@ -168,17 +167,10 @@ export default function Post({ postData, relatedPosts = [], seriesNav = null }) 
       )}
 
       <footer className={postStyles.authorFooter}>
-        <Image
-          src="/images/profile.jpg"
-          alt="Praneel Sindhole"
-          width={56}
-          height={56}
-          className={utilStyles.borderCircle}
-        />
         <div className={postStyles.authorMeta}>
-          <p className={postStyles.authorName}>Praneel Sindhole</p>
+          <p className={postStyles.authorName}>Trisha N Iyer</p>
           <p className={postStyles.authorBio}>
-            CS student in Bangalore. FOSS, IoT, and cybersecurity. Lead at MUKTI.
+            CSE student in Bengaluru. Full-stack development, data analysis, and IaC security.
           </p>
           <Link href="/about" className={postStyles.authorLink}>More about me →</Link>
         </div>

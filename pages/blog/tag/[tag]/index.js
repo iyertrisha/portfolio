@@ -25,7 +25,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function TagPage({ tag, posts = [] }) {
-  const description = `Posts by Praneel Sindhole tagged ${tag}: ${posts.length} article${posts.length === 1 ? '' : 's'}.`;
+  const description = `Posts by Trisha N Iyer tagged ${tag}: ${posts.length} article${posts.length === 1 ? '' : 's'}.`;
 
   return (
     <Layout showBackLink={false}>

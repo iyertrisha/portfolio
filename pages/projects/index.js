@@ -15,7 +15,7 @@ export default function ProjectsPage({ projects }) {
     <Layout showBackLink={false}>
       <SEO
         title="Projects"
-        description="A list of FOSS, IoT, and web projects built by Praneel Sindhole."
+        description="Projects by Trisha N Iyer — full-stack web apps, analytics dashboards, and infrastructure-as-code security tools."
         path="/projects"
       />
       <div style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }}>

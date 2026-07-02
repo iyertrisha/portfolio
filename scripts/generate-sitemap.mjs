@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 
-const SITE_URL = 'https://praneel.sindhole.com';
+const SITE_URL = 'https://iyertrisha.github.io';
 const projectRoot = process.cwd();
 const postsDir = path.join(projectRoot, 'blog', 'posts');
 const publicDir = path.join(projectRoot, 'public');
@@ -12,11 +12,11 @@ const STATIC_ROUTES = [
   { path: '/about/', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog/', priority: '0.9', changefreq: 'weekly' },
   { path: '/projects/', priority: '0.7', changefreq: 'monthly' },
-  { path: '/client-work/', priority: '0.7', changefreq: 'monthly' },
+  { path: '/experience/', priority: '0.7', changefreq: 'monthly' },
   { path: '/contact/', priority: '0.6', changefreq: 'yearly' },
 ];
 
-const NOINDEX_ROUTES = new Set(['/cal/', '/chatbot/', '/countdown/', '/404/']);
+const NOINDEX_ROUTES = new Set(['/cal/', '/countdown/', '/404/']);
 
 function listPosts() {
   const files = fs.readdirSync(postsDir).filter((f) => f.endsWith('.md'));

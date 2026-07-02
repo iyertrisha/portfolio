@@ -1,56 +1,15 @@
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/SEO';
+import OutboundLink from '../components/OutboundLink';
 import utilStyles from '../styles/utils.module.css';
-
-const Cal = dynamic(() => import('@calcom/embed-react').then((m) => m.default), {
-  ssr: false,
-  loading: () => (
-    <div style={{
-      width: '100%',
-      minHeight: '640px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: 'var(--muted-text)',
-      fontSize: '0.9rem',
-    }}>
-      Loading calendar…
-    </div>
-  ),
-});
+import linksStyles from '../styles/links.module.css';
+import { GOOGLE_CALENDAR_SCHEDULE_URL } from '../lib/schedule';
 
 export default function CalPage() {
-  const [theme, setTheme] = useState('light');
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const updateTheme = () => {
-      const t = document.documentElement.getAttribute('data-theme') || 'light';
-      setTheme(t);
-    };
-    updateTheme();
-    const observer = new MutationObserver(updateTheme);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-    import('@calcom/embed-react').then(({ getCalApi }) => {
-      (async () => {
-        const cal = await getCalApi({ namespace: '30min' });
-        cal('ui', { hideEventTypeDetails: false, layout: 'month_view', theme });
-      })();
-    });
-  }, [theme, mounted]);
-
   return (
     <Layout showBackLink={false}>
-      <SEO title="Schedule a Meeting" path="/cal" noindex />
+      <SEO title="Schedule a Call" path="/cal" noindex />
 
       <div style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }}>
         <Link
@@ -68,27 +27,23 @@ export default function CalPage() {
       </div>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h1 className={utilStyles.headingXl}>Schedule a Meeting</h1>
+        <h1 className={utilStyles.headingXl}>Schedule a Call</h1>
+        <p className={utilStyles.lightText} style={{ marginBottom: '1rem' }}>
+          Pick a time that works for you using my Google Calendar appointment schedule.
+        </p>
 
-        <div
-          style={{
-            width: '100%',
-            minHeight: '640px',
-            borderRadius: '12px',
-            border: '1px solid var(--border)',
-            overflow: 'hidden',
-            background: 'var(--bg)',
-          }}
+        <p className={utilStyles.lightText} style={{ marginBottom: '1rem' }}>
+          You&apos;ll be taken to Google Calendar to choose a slot that works for you.
+        </p>
+
+        <OutboundLink
+          href={GOOGLE_CALENDAR_SCHEDULE_URL}
+          eventName="schedule-call-click"
+          className={linksStyles.linkButton}
+          style={{ display: 'inline-flex' }}
         >
-          {mounted && (
-            <Cal
-              namespace="30min"
-              calLink="praneels/30min"
-              style={{ width: '100%', height: '100%', overflow: 'scroll' }}
-              config={{ layout: 'month_view', theme }}
-            />
-          )}
-        </div>
+          Book on Google Calendar
+        </OutboundLink>
       </section>
     </Layout>
   );

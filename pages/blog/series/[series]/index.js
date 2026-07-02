@@ -41,8 +41,8 @@ export async function getStaticProps({ params }) {
 export default function SeriesPage({ series, posts = [] }) {
   const meta = SERIES_META[series] || {
     label: humanizeSeriesId(series),
-    intro: `A ${posts.length}-part series by Praneel Sindhole.`,
-    description: `A ${posts.length}-part series by Praneel Sindhole.`,
+    intro: `A ${posts.length}-part series by Trisha N Iyer.`,
+    description: `A ${posts.length}-part series by Trisha N Iyer.`,
   };
 
   return (

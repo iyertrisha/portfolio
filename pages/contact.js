@@ -3,6 +3,7 @@ import SEO from '../components/SEO';
 import utilStyles from '../styles/utils.module.css';
 import linksStyles from '../styles/links.module.css';
 import contactStyles from '../styles/contact.module.css';
+import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
@@ -43,7 +44,6 @@ export default function Contact() {
     }
   }, [formMessage.text]);
 
-  // Prefetch /cal for instant navigation
   useEffect(() => {
     router.prefetch('/cal').catch(() => {});
   }, [router]);
@@ -100,7 +100,7 @@ export default function Contact() {
   const labelStyle = {
     fontWeight: 600,
     marginBottom: 6,
-    color: 'var(--text)'
+    color: 'var(--text)',
   };
 
   const formGroupStyle = {
@@ -123,19 +123,18 @@ export default function Contact() {
   return (
     <Layout
       showBackLink
-     
       backLinkExtra={(
-        <a
+        <Link
           href="/cal"
           className={`${linksStyles.linkButton} ${contactStyles.inlineSchedule}`}
         >
           Schedule Call
-        </a>
+        </Link>
       )}
     >
       <SEO
         title="Contact"
-        description="Get in touch with Praneel Sindhole."
+        description="Get in touch with Trisha N Iyer."
         path="/contact"
       />
 
@@ -143,7 +142,6 @@ export default function Contact() {
         <h1 className={utilStyles.headingXl} style={{ marginTop: 0 }}>Get In Touch</h1>
         <p className={utilStyles.lightText}>Have a question or want to connect? Send me a message!</p>
 
-        {/* Form message container */}
         <div
           id="form-message"
           role="status"
@@ -210,12 +208,12 @@ export default function Contact() {
           </button>
         </form>
       </section>
-      <a
+      <Link
         href="/cal"
         className={`${linksStyles.linkButton} ${contactStyles.floatingSchedule}`}
       >
         Schedule Call
-      </a>
+      </Link>
     </Layout>
   );
 }

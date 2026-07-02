@@ -2,11 +2,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 
-const SITE_URL = 'https://praneel.sindhole.com';
-const FEED_TITLE = 'Praneel Sindhole — Blog';
+const SITE_URL = 'https://iyertrisha.github.io';
+const FEED_TITLE = 'Trisha N Iyer — Blog';
 const FEED_DESCRIPTION =
-  "Posts on FOSS, AWS, n8n automation, IoT, cybersecurity, and what I'm building.";
-const AUTHOR = 'Praneel Sindhole';
+  'Posts by Trisha N Iyer on full-stack development, data analysis, and infrastructure-as-code security.';
+const AUTHOR = 'Trisha N Iyer';
 
 const projectRoot = process.cwd();
 const postsDir = path.join(projectRoot, 'blog', 'posts');
@@ -89,7 +89,7 @@ function main() {
         `      <guid isPermaLink="true">${link}</guid>`,
         `      <pubDate>${rfc822(post.date)}</pubDate>`,
         `      <description>${escapeXml(post.description)}</description>`,
-        `      <author>noreply@praneel.sindhole.com (${AUTHOR})</author>`,
+        `      <author>iyertrisha2@gmail.com (${AUTHOR})</author>`,
         categories || null,
         '    </item>',
       ]
@@ -107,7 +107,7 @@ function main() {
     `    <description>${escapeXml(FEED_DESCRIPTION)}</description>`,
     '    <language>en</language>',
     `    <lastBuildDate>${now}</lastBuildDate>`,
-    `    <managingEditor>noreply@praneel.sindhole.com (${AUTHOR})</managingEditor>`,
+    `    <managingEditor>iyertrisha2@gmail.com (${AUTHOR})</managingEditor>`,
     `    <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />`,
     items,
     '  </channel>',

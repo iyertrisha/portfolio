@@ -61,7 +61,7 @@ export default function BlogIndex({ allPostsData = [], series = [], tags = [] })
     <Layout showBackLink={false}>
       <SEO
         title="Blog"
-        description="Praneel Sindhole's blog - posts on FOSS, AWS, n8n automation, mechanical keyboards, cybersecurity, and learning in public."
+        description="Trisha N Iyer's blog — posts on full-stack development, data analysis, and infrastructure-as-code security."
         path="/blog"
       />
 
@@ -70,7 +70,7 @@ export default function BlogIndex({ allPostsData = [], series = [], tags = [] })
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h1 className={utilStyles.headingXl}>Blog</h1>
         <p className={utilStyles.lightText}>
-          Posts on FOSS, AWS, n8n, IoT, cybersecurity, and what I&apos;m building.
+          Posts on full-stack development, data analysis, and what I&apos;m building.
         </p>
 
         <div className={postStyles.sectionBlock}>

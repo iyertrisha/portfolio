@@ -8,6 +8,16 @@ const nextConfig = {
         destination: '/blog/posts/:id',
         permanent: true,
       },
+      {
+        source: '/client-work/:path*',
+        destination: '/experience/:path*',
+        permanent: true,
+      },
+      {
+        source: '/chatbot/:path*',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };
