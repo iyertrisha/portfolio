@@ -1,10 +1,12 @@
 import '../styles/global.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import TabTitleEasterEgg from '../components/TabTitleEasterEgg';
 
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <TabTitleEasterEgg />
       <Component {...pageProps} />
       <Analytics />
       <SpeedInsights />

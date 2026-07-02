@@ -2,7 +2,8 @@
   "name": "Trisha N Iyer",
   "short_name": "Trisha",
   "icons": [
-    { "src": "/favicon.ico", "sizes": "any" }
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/favicon.ico", "sizes": "48x48" }
   ],
   "theme_color": "#f9fafb",
   "background_color": "#f9fafb",
