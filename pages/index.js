@@ -39,10 +39,9 @@ export default function Home({
       <section className={homeStyles.hero}>
         <p className={homeStyles.heroTag}>Bengaluru, India</p>
         <p className={homeStyles.heroBio}>
-          I build <strong>full-stack web applications</strong>,{' '}
-          <strong>analytics dashboards</strong>, and{' '}
-          <strong>infrastructure-as-code security tools</strong>. I enjoy turning
-          data into product decisions and shipping software that people actually use.
+          I build <strong>full-stack web apps</strong>, <strong>DevOps</strong>, and{' '}
+          <strong>cloud infrastructure</strong>. I enjoy turning data into product
+          decisions and shipping software that people actually use.
         </p>
       </section>
 
