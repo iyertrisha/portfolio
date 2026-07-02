@@ -49,6 +49,7 @@ function rfc822(date) {
 }
 
 function listPosts() {
+  if (!fs.existsSync(postsDir)) return [];
   const files = fs.readdirSync(postsDir).filter((f) => f.endsWith('.md'));
   return files
     .map((file) => {

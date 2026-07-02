@@ -28,7 +28,6 @@ export default function Custom404() {
           flexWrap: 'wrap',
         }}>
           <Link className={linksStyles.linkButton} href="/">Go Home</Link>
-          <Link className={linksStyles.linkButton} href="/blog">View Blog</Link>
         </div>
       </div>
     </Layout>
