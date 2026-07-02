@@ -4,11 +4,9 @@ import SEO from '../components/SEO';
 import OutboundLink from '../components/OutboundLink';
 import { personJsonLd, websiteJsonLd, SOCIAL_PROFILES } from '../lib/seo';
 import homeStyles from '../styles/home.module.css';
-import { getSortedPostsData } from '../lib/posts';
 import { getProjects } from '../lib/projects';
 import { getExperience } from '../lib/experience';
 import { getLeadership } from '../lib/leadership';
-import Date from '../components/date';
 
 const homeJsonLd = {
   '@context': 'https://schema.org',
@@ -16,14 +14,12 @@ const homeJsonLd = {
 };
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
   const allProjects = getProjects();
   const allExperience = getExperience();
   const allLeadership = getLeadership();
 
   return {
     props: {
-      recentPosts: allPostsData.slice(0, 4),
       featuredProjects: allProjects.slice(0, 3),
       featuredExperience: allExperience,
       featuredLeadership: allLeadership,
@@ -32,7 +28,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({
-  recentPosts = [],
   featuredProjects = [],
   featuredExperience = [],
   featuredLeadership = [],
@@ -59,7 +54,6 @@ export default function Home({
 
       <section className={homeStyles.section}>
         <div className={homeStyles.linksGrid}>
-          <Link className={homeStyles.chip} href="/blog">Blog</Link>
           <Link className={homeStyles.chip} href="/projects">Projects</Link>
           <Link className={homeStyles.chip} href="/experience">Experience</Link>
           <Link className={homeStyles.chip} href="/contact">Contact</Link>
@@ -70,7 +64,7 @@ export default function Home({
       <section className={`${homeStyles.section} ${homeStyles.highlightSection}`}>
         <div className={homeStyles.sectionHeader}>
           <span className={homeStyles.highlightSectionLabel}>Experience</span>
-          <Link href="/experience" className={homeStyles.viewMore}>View All -&gt;</Link>
+          <Link href="/experience" className={homeStyles.viewMore}>View all</Link>
         </div>
         <div className={homeStyles.highlightGrid}>
           {featuredExperience.map((item) => (
@@ -123,7 +117,7 @@ export default function Home({
       <section className={homeStyles.section}>
         <div className={homeStyles.sectionHeader}>
           <span className={homeStyles.sectionLabel}>Latest Work</span>
-          <Link href="/projects" className={homeStyles.viewMore}>All Projects -&gt;</Link>
+          <Link href="/projects" className={homeStyles.viewMore}>View all</Link>
         </div>
         <div className={homeStyles.projectGrid}>
           {featuredProjects.map((project) => (
@@ -149,26 +143,7 @@ export default function Home({
 
       <section className={homeStyles.section}>
         <div className={homeStyles.sectionHeader}>
-          <span className={homeStyles.sectionLabel}>Recent Posts</span>
-          <Link href="/blog" className={homeStyles.viewMore}>All Posts -&gt;</Link>
-        </div>
-        <ul className={homeStyles.postList}>
-          {recentPosts.map(({ id, date, title }) => (
-            <li key={id} className={homeStyles.postItem}>
-              <Link href={`/blog/posts/${id}`} className={homeStyles.postTitle}>
-                {title}
-              </Link>
-              <span className={homeStyles.postDate}>
-                <Date dateString={date} />
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className={homeStyles.section}>
-        <div className={homeStyles.sectionHeader}>
-          <span className={homeStyles.sectionLabel}>Find me</span>
+          <span className={homeStyles.sectionLabel}>Connect</span>
         </div>
         <div className={homeStyles.linksGrid}>
           <OutboundLink className={homeStyles.chip} href={SOCIAL_PROFILES.github} eventName="find-me-click">GitHub</OutboundLink>

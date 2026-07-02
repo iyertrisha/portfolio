@@ -126,7 +126,7 @@ export default function Contact() {
       backLinkExtra={(
         <Link
           href="/cal"
-          className={`${linksStyles.linkButton} ${contactStyles.inlineSchedule}`}
+          className={`${linksStyles.linkButtonSecondary} ${contactStyles.inlineSchedule}`}
         >
           Schedule Call
         </Link>

@@ -105,20 +105,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
-  line-height: 1.6;
-  font-size: 18px;
+  font-family: var(--font-body);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -164,37 +155,50 @@ a, p, li, code {
 
 /* Theme variables */
 :root {
-  --bg: #ffffff;
-  --text: #111827; /* gray-900 */
-  --muted-text: #6b7280; /* gray-500 */
-  --border: #e5e7eb; /* gray-200 */
-  --link: #0070f3;
-  --hover-bg: rgba(0, 0, 0, 0.04);
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --transition: 200ms ease;
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted-text: #6b7280;
+  --border: #e8ebf0;
+  --link: #0d9488;
+  --accent: #0d9488;
+  --accent-soft: rgba(13, 148, 136, 0.1);
+  --hover-bg: rgba(17, 24, 39, 0.04);
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.05);
   /* Status colors (light) */
-  --success-text: #065f46; /* emerald-900 */
+  --success-text: #065f46;
   --success-bg: rgba(16, 185, 129, 0.12);
-  --error-text: #7f1d1d; /* red-900 */
+  --error-text: #7f1d1d;
   --error-bg: rgba(239, 68, 68, 0.12);
 }
 
 html[data-theme='dark'] {
-  --bg: #151617; /* gray-800 */
-  --text: #e5e7eb; /* gray-200 */
-  --muted-text: #9ca3af; /* gray-400 */
-  --border: #363b43; /* gray-700 */
-  --link: var(--text); /* neutral link color in dark mode */
-  --hover-bg: rgba(255, 255, 255, 0.06);
-  /* Status colors (dark - brighter for contrast) */
-  --success-text: #34d399; /* emerald-400 */
+  --bg: #0f1115;
+  --surface: #171a21;
+  --text: #f3f4f6;
+  --muted-text: #9ca3af;
+  --border: #2a303c;
+  --link: #2dd4bf;
+  --accent: #2dd4bf;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --hover-bg: rgba(255, 255, 255, 0.05);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  /* Status colors (dark) */
+  --success-text: #34d399;
   --success-bg: rgba(16, 185, 129, 0.22);
-  --error-text: #f87171; /* red-400 */
+  --error-text: #f87171;
   --error-bg: rgba(239, 68, 68, 0.22);
 }
 
 body {
   background-color: var(--bg);
   color: var(--text);
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: background-color var(--transition), color var(--transition);
 }
 
 /* Form controls inherit fonts and transition theme vars */
@@ -202,7 +206,7 @@ input, textarea, select {
   font: inherit;
 }
 button, input, textarea, select {
-  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 /* Contact form message box transition */

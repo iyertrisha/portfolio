@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import styles from '../styles/themeToggle.module.css';
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState('light');
@@ -27,19 +28,12 @@ export default function ThemeToggle() {
 
   return (
     <button
+      type="button"
       onClick={toggle}
       aria-label="Toggle theme"
-      style={{
-        background: 'transparent',
-        border: `1px solid var(--border)`,
-        color: 'var(--text)',
-        padding: '6px 10px',
-        borderRadius: 8,
-        cursor: 'pointer',
-        fontWeight: 600,
-      }}
+      className={styles.toggle}
     >
-      {theme === 'light' ? 'Dark mode' : 'Light mode'}
+      {theme === 'light' ? 'Dark' : 'Light'}
     </button>
   );
 }

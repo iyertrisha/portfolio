@@ -1,0 +1,18 @@
+.toggle {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted-text);
+  padding: 0.45rem 0.7rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.78rem;
+  font-family: inherit;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.toggle:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent) 25%, var(--border));
+  background: var(--accent-soft);
+}

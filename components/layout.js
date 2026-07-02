@@ -29,16 +29,7 @@ export default function Layout({ children, home, showBackLink = true, compactHea
       <main>{children}</main>
       {!home && showBackLink && (
         <div className={styles.backToHome}>
-          <Link
-            href="/"
-            style={{
-              border: '1px solid var(--border)',
-              borderRadius: 10,
-              padding: '8px 12px',
-              textDecoration: 'none',
-              color: 'var(--text)'
-            }}
-          >
+          <Link href="/" className={utilStyles.backLink}>
             ← Back to home
           </Link>
           {backLinkExtra}

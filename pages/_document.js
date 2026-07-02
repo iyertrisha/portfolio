@@ -22,8 +22,14 @@ export default function Document() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico?v=20250815" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <meta name="theme-color" content="#f9fafb" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)" />
         <meta name="google-site-verification" content="XUQFhDYJvHd-CbWXZPBBLvTFJTotgwvpN3lG5-HwsYA" />
         <link
           rel="alternate"
