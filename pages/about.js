@@ -37,7 +37,7 @@ export default function AboutPage() {
             <p>
               <strong>M S Ramaiah Institute Of Technology</strong> — Bengaluru, India
               <br />
-              Bachelor of Computer Science and Engineering · GPA: 9.2
+              B.E. (Bachelor of Engineering) · Computer Science and Engineering · GPA: 9.2
               <br />
               Expected Graduation: May 2027
             </p>

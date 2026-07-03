@@ -47,7 +47,7 @@ export default function Home({
 
       <div className={homeStyles.statusBar}>
         <span className={homeStyles.statusText}>
-          B.Tech CSE @ MSRIT — GPA <strong>9.2</strong> — Expected May 2027
+          B.E. CSE @ MSRIT — GPA <strong>9.2</strong> — Expected May 2027
         </span>
       </div>
 

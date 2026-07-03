@@ -15,7 +15,7 @@ export default function ExperiencePage({ experience }) {
     <Layout showBackLink={false}>
       <SEO
         title="Experience"
-        description="Internship experience for Trisha N Iyer — web development at Gopala Nethralaya and software engineering at Globalyceum."
+        description="Internship experience for Trisha N Iyer — web development at Gopala Nethralaya and software engineering at Globalyceum, including AI/ML work on plagiarism detection and handwriting analysis."
         path="/experience"
       />
 
