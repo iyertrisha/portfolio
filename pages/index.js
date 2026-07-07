@@ -40,9 +40,8 @@ export default function Home({
         <p className={homeStyles.heroTag}>Bengaluru, India</p>
         <p className={homeStyles.heroBio}>
           I build <strong>full-stack apps</strong>, <strong>AI-powered tools</strong>,{' '}
-          <strong>DevSecOps pipelines</strong>, and <strong>cloud infrastructure</strong> —
-          and turn raw data into <strong>insights that drive decisions</strong>. I care
-          about clean systems, grounded data, and software that actually solves something.
+          <strong>DevSecOps pipelines</strong>, and <strong>cloud infrastructure</strong>{' '}
+          and turn raw data into <strong>insights that drive decisions</strong>.
         </p>
       </section>
 
