@@ -1,57 +1,67 @@
-# Landing + Blog (Next.js Pages Router)
+# Trisha N Iyer — Portfolio
 
-A simple personal landing page with a blog, built on the Next.js Pages Router tutorial and customized to my liking.
+Personal portfolio site built with Next.js. Showcases projects, experience, leadership, and contact info.
 
-### Why I made this
-- I was doing the official Next.js Pages Router Tutorial and then thought i can modify and use it, so i modified the layout, styling, and structure to fit my use (landing page, dark/light theme toggle, Linktree-style links, and a blog Page).
+**Live site:** [iyertrisha-portfolio.netlify.app](https://iyertrisha-portfolio.netlify.app)
 
-## How to use (fork/clone + run)
-1. Fork this repository on GitHub (or) Directly Clone the Repository.
-2. Clone the project locally:
+## Stack
 
-	```bash
-	git clone https://github.com/<your-username>/landing-page.git
-	cd landing-page
-	```
+- **Framework:** Next.js 15 (Pages Router), React 19
+- **Package manager:** pnpm
+- **Node:** 22.14+
+- **Deploy:** Netlify (`@netlify/plugin-nextjs`)
+- **Analytics:** Vercel Analytics, Speed Insights, optional Umami / Cloudflare Web Analytics
 
-3. Install dependencies and run the dev server:
+## Features
 
-	 - Node.js 18+ recommended
-	 - Install and run:
+- Dark / light theme toggle
+- SEO metadata, JSON-LD, sitemap, and RSS generated at build time
+- Tab title easter egg (`no, come back!` when you switch away)
+- Projects, experience, and leadership sections driven from `lib/` data files
 
-	 ```
-	 npm install
-	 npm run dev
-	 ```
+## Featured projects
 
-4. Open http://localhost:3000
+| Project | Description |
+|---------|-------------|
+| [DanceGPT](https://github.com/iyertrisha/dance-GPT) | AI exam prep for Bharatanatyam Gandharva theory — RAG, flashcards, chat tutor |
+| [Gopala Nethralaya](https://github.com/iyertrisha/gopala-nethralaya) | Hospital management system (React, Django, PostgreSQL, Docker) |
+| [NetGuard IaC Analyzer](https://github.com/iyertrisha/security_scanner) | AI-augmented IaC security scanner (FastAPI, React) |
+| [Kestra OSS](https://github.com/kestra-io/kestra/pull/11865) | TypeScript migration contribution |
 
-## Customize it
-- Profile image: replace `public/images/profile.jpg`.
-- Name and site title: edit `components/layout.js` (`name` and `siteTitle`).
-- Landing page intro and links: edit `pages/index.js`.
-- Favicon: replace `public/favicon.ico`.
-- Theme colors: adjust CSS variables in `styles/global.css`.
-- Blog content: add markdown files under `blog/posts/`.
-- Images in posts: put images in `public/` and reference as `![alt](/path/in/public.png)`.
+## Local development
 
-### Write blog posts (Markdown)
-- Posts live as Markdown files in the `blog/posts/` folder (not `pages/posts`).
-- Each post needs front matter at the top:
+```bash
+git clone https://github.com/iyertrisha/portfolio.git
+cd portfolio
+pnpm install
+pnpm dev
+```
 
-	```
-	---
-	title: "My Post Title"
-	date: "2025-08-15"
-	---
+Open [http://localhost:3000](http://localhost:3000).
 
-	Your content here in Markdown.
-	```
+## Customize
 
-- The blog index is at `/blog`. Each markdown file becomes a post at `/blog/posts/[id]`, where `[id]` is the filename (without `.md`).
+| What | Where |
+|------|-------|
+| Home intro | `pages/index.js` |
+| Projects | `lib/projects.js` |
+| Experience | `lib/experience.js` |
+| Leadership | `lib/leadership.js` |
+| SEO defaults | `lib/seo.js` |
+| Theme colors | `styles/global.css` |
+| Favicon | `public/favicon.svg` |
 
-### Deploy
-- Build with `npm run build` and deploy to your host of choice (I Used Vercel). Importing the repo into Vercel auto-detects Next.js.
+Copy `.env.example` to `.env.local` for optional analytics keys.
 
-## Attribution
-- Based on the official [Next.js Pages Router Tutorial](https://nextjs.org/learn) and then customized by me.
+## Build & deploy
+
+```bash
+pnpm build   # runs sitemap/RSS generation, then next build
+pnpm start   # production server locally
+```
+
+Netlify reads `netlify.toml` and runs `pnpm build` on push to `main`.
+
+## License
+
+MIT — see [LICENSE](./LICENSE).
